@@ -2,46 +2,67 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | red-deck</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
-    <!-- CSS for Horizontal Orientation -->
+    <!-- Додано стилі для повідомлення про орієнтацію -->
     <style>
-        @media (orientation: landscape) {
-            #unity-container {
-                width: 100vw;
-                height: 100vh;
-            }
-            #unity-canvas {
-                transform: rotate(90deg);
-                width: 100vh;
-                height: 100vw;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
+        /* Стилі для контейнера Unity */
+        #unity-container, #unity-canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Стилі для повідомлення про необхідність перевернути пристрій */
+        #orientationPrompt {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            color: #fff;
+            display: none; /* Приховано за замовчуванням */
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 9999;
+        }
+
+        /* Забороняємо прокрутку сторінки */
+        body {
+            margin: 0;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-<div id="unity-container" class="unity-desktop">
-    <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
-    <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-            <div id="unity-progress-bar-full"></div>
+<!-- Додано повідомлення про орієнтацію -->
+<div id="orientationPrompt">
+    <p>Будь ласка, переверніть пристрій у горизонтальне положення, щоб грати.</p>
+</div>
+
+<!-- Обгортка для гри -->
+<div id="gameContainer">
+    <div id="unity-container" class="unity-desktop">
+        <canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
+        <div id="unity-loading-bar">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+        </div>
+        <div id="unity-warning"></div>
+        <div id="unity-footer">
+            <div id="unity-webgl-logo"></div>
+            <div id="unity-fullscreen-button"></div>
+            <div id="unity-build-title">red-deck</div>
         </div>
     </div>
-    <div id="unity-warning"></div>
-    <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">red-deck</div>
-    </div>
 </div>
+
 <script>
     var container = document.querySelector("#unity-container");
     var canvas = document.querySelector("#unity-canvas");
@@ -81,25 +102,34 @@
         showBanner: unityShowBanner,
     };
 
-    // Code for orientation lock
-    document.addEventListener("DOMContentLoaded", function() {
-        if (screen.orientation && screen.orientation.lock) {
-            document.documentElement.requestFullscreen().then(() => {
-                screen.orientation.lock("landscape").catch(function(error) {
-                    console.error("Не вдалося заблокувати орієнтацію:", error);
-                });
-            });
-        }
-    });
+    // Функція для перевірки, чи є пристрій мобільним
+    function isMobileDevice() {
+        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
 
-    // Orientation change listener
-    var query = window.matchMedia("(orientation: landscape)");
-    query.addListener(function(e) {
-        if (e.matches) {
-            console.log("Гра працює в горизонтальній орієнтації");
-        } else {
-            alert("Будь ласка, переверніть пристрій у горизонтальне положення.");
+    // Функція для перевірки, чи пристрій у горизонтальній орієнтації
+    function isLandscape() {
+        return window.innerWidth > window.innerHeight;
+    }
+
+    // Обробник зміни орієнтації
+    function handleOrientationChange() {
+        if (isMobileDevice()) {
+            if (isLandscape()) {
+                document.getElementById('orientationPrompt').style.display = 'none';
+                document.getElementById('gameContainer').style.display = 'block';
+            } else {
+                document.getElementById('orientationPrompt').style.display = 'flex';
+                document.getElementById('gameContainer').style.display = 'none';
+            }
         }
+    }
+
+    window.addEventListener("orientationchange", handleOrientationChange);
+    window.addEventListener("resize", handleOrientationChange);
+
+    document.addEventListener("DOMContentLoaded", function() {
+        handleOrientationChange(); // Початкова перевірка
     });
 
     // Telegram Web App initialization
@@ -127,7 +157,6 @@
             progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
             loadingBar.style.display = "none";
-            unityInstance.SetFullscreen(1);
             fullscreenButton.onclick = () => {
                 unityInstance.SetFullscreen(1);
             };
