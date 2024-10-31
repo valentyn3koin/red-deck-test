@@ -83,6 +83,7 @@
     <type fullname="RedDeck.Utilities.Grid.ElementsContainer" preserve="all" />
     <type fullname="RedDeck.Utilities.Grid.SmoothGridLayout" preserve="all" />
     <type fullname="RedDeck.Utilities.GridItem" preserve="all" />
+    <type fullname="ViewInfoMarker" preserve="all" />
     <type fullname="RedDeck.Heroes.HeroModel" preserve="nothing" serialized="true" />
     <type fullname="RedDeck.Cards.RaceType" preserve="nothing" serialized="true" />
     <type fullname="RedDeck.Tavern.TavernUpdateInfo" preserve="nothing" serialized="true" />
