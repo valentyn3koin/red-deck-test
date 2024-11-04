@@ -139,7 +139,7 @@
     function isLandscape() {
         return window.innerWidth > window.innerHeight;
     }
-
+    
     // Обробник зміни орієнтації
     function handleOrientationChange() {
         if (isMobileDevice()) {
@@ -168,7 +168,17 @@
         tg.expand();
     }
 
-    tg.MainButton.hide(); // Ховаємо верхню смужку
+    // tg.MainButton.hide(); // Ховаємо верхню смужку
+
+    // Зміна кольору верхньої смужки на чорний
+    tg.onEvent("themeChanged", setBlackHeader); // Викликає функцію при зміні теми
+
+    function setBlackHeader() {
+        tg.themeParams.bg_color = "#000000"; // Чорний колір
+        tg.applyThemeParams(); // Застосовує новий колір
+    }
+
+    setBlackHeader(); // Застосувати чорний колір при завантаженні
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         var meta = document.createElement('meta');
