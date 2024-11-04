@@ -164,6 +164,12 @@
     const tg = window.Telegram.WebApp;
     tg.ready();
 
+    if (!tg.isExpanded) {
+        tg.expand();
+    }
+
+    tg.MainButton.hide(); // Ховаємо верхню смужку
+
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         var meta = document.createElement('meta');
         meta.name = 'viewport';
