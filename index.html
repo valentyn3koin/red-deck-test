@@ -139,7 +139,7 @@
     function isLandscape() {
         return window.innerWidth > window.innerHeight;
     }
-    
+
     // Обробник зміни орієнтації
     function handleOrientationChange() {
         if (isMobileDevice()) {
@@ -164,13 +164,9 @@
     const tg = window.Telegram.WebApp;
     tg.ready();
 
-    // Встановлення чорного кольору для верхньої панелі
-    tg.setHeaderColor("#000000");
-
     if (!tg.isExpanded) {
         tg.expand();
     }
-    
 
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         var meta = document.createElement('meta');
