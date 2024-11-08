@@ -3,6 +3,7 @@
     <type fullname="BatteryView" preserve="all" />
     <type fullname="CardAnimatorController" preserve="all" />
     <type fullname="CardViewInfo" preserve="all" />
+    <type fullname="ChoosePanel" preserve="all" />
     <type fullname="DamageCardFXController" preserve="all" />
     <type fullname="DivineShieldCardFXController" preserve="all" />
     <type fullname="RedDeck.AbilityData" preserve="all" />
