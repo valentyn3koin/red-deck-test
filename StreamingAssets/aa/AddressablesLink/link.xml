@@ -66,6 +66,7 @@
     <type fullname="RedDeck.StatusData" preserve="all" />
     <type fullname="RedDeck.StickyFilterMechanic" preserve="all" />
     <type fullname="RedDeck.StickyTryUseFilter" preserve="all" />
+    <type fullname="RedDeck.Tavern.SkillHeroInfoView" preserve="all" />
     <type fullname="RedDeck.Tavern.TavernBigDeckView" preserve="all" />
     <type fullname="RedDeck.Tavern.TavernCardViewInfo" preserve="all" />
     <type fullname="RedDeck.Tavern.TavernData" preserve="all" />
@@ -84,6 +85,8 @@
     <type fullname="RedDeck.Utilities.Grid.ElementsContainer" preserve="all" />
     <type fullname="RedDeck.Utilities.Grid.SmoothGridLayout" preserve="all" />
     <type fullname="RedDeck.Utilities.GridItem" preserve="all" />
+    <type fullname="RedDeck.Utilities.PositionPanel" preserve="all" />
+    <type fullname="RedDeck.Utilities.Shake" preserve="all" />
     <type fullname="ViewInfoMarker" preserve="all" />
     <type fullname="RedDeck.Heroes.HeroModel" preserve="nothing" serialized="true" />
     <type fullname="RedDeck.Cards.RaceType" preserve="nothing" serialized="true" />
@@ -166,7 +169,6 @@
     <type fullname="UnityEngine.MonoBehaviour" preserve="all" />
     <type fullname="UnityEngine.Object" preserve="all" />
     <type fullname="UnityEngine.RectTransform" preserve="all" />
-    <type fullname="UnityEngine.RenderTexture" preserve="all" />
     <type fullname="UnityEngine.Shader" preserve="all" />
     <type fullname="UnityEngine.Sprite" preserve="all" />
     <type fullname="UnityEngine.TextAsset" preserve="all" />
