@@ -37,7 +37,6 @@
     <type fullname="RedDeck.Effect.Battlecry.StickyEffect" preserve="all" />
     <type fullname="RedDeck.Effect.DeathrattleDamageSolo" preserve="all" />
     <type fullname="RedDeck.Effect.HealTarget" preserve="all" />
-    <type fullname="RedDeck.Effect.Hero.HeroFullHPHealEffect" preserve="all" />
     <type fullname="RedDeck.Effect.TargetDamage" preserve="all" />
     <type fullname="RedDeck.Effect.TargetFreeze" preserve="all" />
     <type fullname="RedDeck.EmptyFilter" preserve="all" />
