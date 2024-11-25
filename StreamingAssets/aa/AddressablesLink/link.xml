@@ -2,6 +2,8 @@
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="BatteryView" preserve="all" />
     <type fullname="CardAnimatorController" preserve="all" />
+    <type fullname="CardHistory" preserve="all" />
+    <type fullname="CardHistoryItem" preserve="all" />
     <type fullname="CardViewInfo" preserve="all" />
     <type fullname="ChoosePanel" preserve="all" />
     <type fullname="DamageCardFXController" preserve="all" />
@@ -33,12 +35,7 @@
     <type fullname="RedDeck.Effect.Battlecry.AddHp" preserve="all" />
     <type fullname="RedDeck.Effect.Battlecry.AddHpAndAttackMultiplication" preserve="all" />
     <type fullname="RedDeck.Effect.Battlecry.GainSelfHp" preserve="all" />
-    <type fullname="RedDeck.Effect.Battlecry.HealHp" preserve="all" />
     <type fullname="RedDeck.Effect.Battlecry.StickyEffect" preserve="all" />
-    <type fullname="RedDeck.Effect.DeathrattleDamageSolo" preserve="all" />
-    <type fullname="RedDeck.Effect.HealTarget" preserve="all" />
-    <type fullname="RedDeck.Effect.TargetDamage" preserve="all" />
-    <type fullname="RedDeck.Effect.TargetFreeze" preserve="all" />
     <type fullname="RedDeck.EmptyFilter" preserve="all" />
     <type fullname="RedDeck.EmptyFilterWithoutCaster" preserve="all" />
     <type fullname="RedDeck.FieldMedicFilter" preserve="all" />
@@ -50,6 +47,7 @@
     <type fullname="RedDeck.Heroes.HeroPickViewItem" preserve="all" />
     <type fullname="RedDeck.Heroes.HeroSkillData" preserve="all" />
     <type fullname="RedDeck.Heroes.HeroViewInfo" preserve="all" />
+    <type fullname="RedDeck.Heroes.SkillMainHeroButton" preserve="all" />
     <type fullname="RedDeck.HeroPanel.HeroesItemView" preserve="all" />
     <type fullname="RedDeck.HeroPanel.HeroesPanelView" preserve="all" />
     <type fullname="RedDeck.HeroPanel.HeroPanelItemView" preserve="all" />
@@ -67,7 +65,6 @@
     <type fullname="RedDeck.StickyTryUseFilter" preserve="all" />
     <type fullname="RedDeck.Tavern.SkillHeroInfoView" preserve="all" />
     <type fullname="RedDeck.Tavern.TavernBigDeckView" preserve="all" />
-    <type fullname="RedDeck.Tavern.TavernCardViewInfo" preserve="all" />
     <type fullname="RedDeck.Tavern.TavernData" preserve="all" />
     <type fullname="RedDeck.Tavern.TavernDropPlace" preserve="all" />
     <type fullname="RedDeck.Tavern.TavernFreeze" preserve="all" />
@@ -76,6 +73,7 @@
     <type fullname="RedDeck.Tavern.TavernScoreView" preserve="all" />
     <type fullname="RedDeck.Tavern.TavernScreen" preserve="all" />
     <type fullname="RedDeck.Tavern.TavernTimer" preserve="all" />
+    <type fullname="RedDeck.Tavern.TavernViewInfo" preserve="all" />
     <type fullname="RedDeck.Tools.PopupAnimator" preserve="all" />
     <type fullname="RedDeck.UI.UIButtonSound" preserve="all" />
     <type fullname="RedDeck.Utilities.BlinkDots" preserve="all" />
@@ -87,6 +85,8 @@
     <type fullname="RedDeck.Utilities.PositionPanel" preserve="all" />
     <type fullname="RedDeck.Utilities.Shake" preserve="all" />
     <type fullname="ViewInfoMarker" preserve="all" />
+    <type fullname="RedDeck.AbilityModel" preserve="nothing" serialized="true" />
+    <type fullname="RedDeck.Battle.StatusModel" preserve="nothing" serialized="true" />
     <type fullname="RedDeck.Heroes.HeroModel" preserve="nothing" serialized="true" />
     <type fullname="RedDeck.Cards.RaceType" preserve="nothing" serialized="true" />
     <type fullname="RedDeck.Tavern.TavernUpdateInfo" preserve="nothing" serialized="true" />
